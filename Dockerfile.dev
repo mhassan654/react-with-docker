@@ -1,0 +1,12 @@
+FROM node:19.9-alpine3.17
+# FROM node:12.18.1
+
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install
+# RUN npm run install ===>this command is wrong and it doesnot run
+
+COPY . .
+
+CMD ["npm","run","start"]
