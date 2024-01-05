@@ -1,0 +1,11 @@
+sudo: required
+services:
+  - docker
+
+
+before_install: 
+   - docker build -t  mhassan654/react-with-docker -f Dockerfile.dev .
+
+
+script: 
+  - docker run mhassan654/react-with-docker npm run test -- --coverage
